@@ -16,6 +16,12 @@
             align-items: center;  /* Centers vertically */
             margin: 0;
         }
+
+        .content {
+            text-align: center;
+            padding: 20px;
+        }
+
         .text {
             display: flex;
             justify-content: center;
@@ -26,18 +32,51 @@
             font-size: 20px;
             margin-bottom: 20px;
             border-radius: 15px;
+            padding: 10px;
+            width: 100%;
+            max-width: 500px; /* Prevent text from becoming too wide on large screens */
         }
+
         .img {
             display: flex;
             justify-content: center;
             align-items: center;
         }
+
+        .img img {
+            width: 100%;
+            max-width: 400px; /* Control the max width of the image */
+            height: auto;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .text {
+                font-size: 18px; /* Adjust font size for tablets */
+                max-width: 90%; /* Card width adjusts for smaller screens */
+            }
+
+            .img img {
+                max-width: 80%; /* Reduce the image size on smaller devices */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .text {
+                font-size: 16px; /* Reduce font size for mobile */
+                padding: 8px; /* Adjust padding on mobile */
+            }
+
+            .img img {
+                max-width: 70%; /* Reduce the image size further on mobile */
+            }
+        }
     </style>
 </head>
 <body>
-<div class="content">
-    <div class="text"> <p>YEY I Love You!!! Message me the details!!!</p></div>
-    <div class="img"><img src="./freiren.gif"></div>
-</div>
+    <div class="content">
+        <div class="text"> <p>YEY I Love You!!! Message me the details!!!</p></div>
+        <div class="img"><img src="./freiren.gif" alt="Animated Image"></div>
+    </div>
 </body>
 </html>

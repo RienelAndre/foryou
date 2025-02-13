@@ -3,12 +3,13 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    padding: 0 20px; /* Ensures spacing on smaller screens */
 }
 
-/* From Uiverse.io by vaibhavchandranv */  
 .card {
     font-family: Montserrat, sans-serif;
-    width: 300px;
+    width: 100%;
+    max-width: 400px; /* Max width for large screens */
     height: 250px;
     translate: -6px -6px;
     background: #ff66a3;
@@ -16,9 +17,10 @@
     box-shadow: 12px 12px 0 #000000;
     overflow: hidden;
     transition: all 0.3s ease;
-  }
-  
-  .head {
+    position: relative;
+}
+
+.head {
     font-family: Montserrat, sans-serif;
     font-size: 14px;
     font-weight: 900;
@@ -28,16 +30,17 @@
     padding: 5px 12px;
     color: #000000;
     border-bottom: 3px solid #000000;
-  }
-  
-  .content {
+}
+
+.content {
     padding: 8px 12px;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 600;
-  }
-  
-  .button {
-    padding: 5px 10px;
+    line-height: 1.5;
+}
+
+.button {
+    padding: 10px 20px;
     margin-top: 10px;
     border: 3px solid #000000;
     box-shadow: 3px 3px 0 #000000;
@@ -45,20 +48,55 @@
     background: #4ade80;
     transition: all 0.3s ease;
     cursor: pointer;
-  }
-  
-  .button:hover {
+}
+
+.button:hover {
     translate: 1.5px 1.5px;
     box-shadow: 1.5px 1.5px 0 #000000;
     background: #1ac2ff;
-  }
-  
-  .button:active {
+}
+
+.button:active {
     translate: 3px 3px;
     box-shadow: 0 0 0 #000000;
-  }
-  
-  .card:hover {
+}
+
+.card:hover {
     translate: -6px;
-  }
-  
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .card {
+        max-width: 90%; /* Adjust the card width for tablets and smaller screens */
+    }
+
+    .content {
+        font-size: 14px; /* Smaller text for mobile */
+    }
+
+    .button {
+        padding: 8px 16px;
+        font-size: 14px; /* Adjust button size for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        max-width: 95%; /* Further adjust the card size on mobile */
+        height: auto; /* Allow card height to adjust on smaller screens */
+    }
+
+    .content {
+        font-size: 12px; /* Further reduce text size */
+    }
+
+    .button {
+        padding: 6px 12px;
+        font-size: 12px; /* Even smaller button on mobile */
+    }
+
+    .head {
+        font-size: 12px; /* Reduce header font size on mobile */
+    }
+}
