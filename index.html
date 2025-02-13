@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="page1.css">
+    <style>
+        body{
+            background-image:url(./background.jpg);
+            background-repeat: no-repeat;
+            background-size:cover;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<div class="contents">
+ <!-- From Uiverse.io by vaibhavchandranv --> 
+<div class="card">
+    <div class="head">Love</div>
+    <div class="content">
+     Would you like to be my valentines and go on a date whenever you're free?
+      <br />
+      <button class="button" onclick="location.href='page1.html'">Yes</button>
+      <button class="button" id="movingButton">No</button>
+    </div>
+  </div>
+</div> 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const button = document.getElementById("movingButton");
+    const card = document.querySelector(".card");
+
+    button.addEventListener("mouseover", function () {
+        const cardRect = card.getBoundingClientRect();
+        const maxX = cardRect.width - button.offsetWidth;
+        const maxY = cardRect.height - button.offsetHeight;
+        
+        const x = Math.random() * maxX;
+        const y = Math.random() * maxY;
+        
+        button.style.position = "absolute";
+        button.style.left = `${x}px`;
+        button.style.top = `${y}px`;
+    });
+});
+</script>
+</body>
+</html>
